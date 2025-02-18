@@ -25,12 +25,11 @@ def read_file_to_dict():
 
     for line in stateCapitals:
         pair = line.strip("").split(",")
-        #print(pair[0], end="")
-        #print(pair[1].strip("\n"), end="")
         stateDict[pair[0]] = pair[1].strip("\n")
-        
-    print(stateDict)
 
+
+    file.close()    
+    return stateDict
 
 
     
@@ -38,8 +37,11 @@ def read_file_to_dict():
 
     
 
-def get_random_state():
-    pass
+def get_random_state(stateDict):
+
+    randState = random.choice(list(stateDict.items()))
+    print(randState)
+    return randState
 """
 1. This function takes the dictionary of states and capitals as input.
 2. It randomly selects a state and its corresponding capital from the dictionary and
@@ -47,8 +49,20 @@ returns them as a tuple.
 """
 
 
-def get_random_choices():
-    pass
+def get_random_choices(stateDict, correctCapital):
+    count = 0
+    choicesList = [correctCapital]
+    while (count < 3):
+        randChoice = random.choice(list(stateDict.items()))[1]
+
+        #prevent multiple of the same choice
+        if randChoice not in choicesList:
+            choicesList.append(randChoice)
+            count += 1
+        
+    random.shuffle(choicesList)    
+    return choicesList
+    
 """
 1. This function generates a list of four possible answers for a quiz question.
 2. It starts with the correct capital and then randomly selects three other capitals
@@ -56,8 +70,24 @@ from the list of all capitals, ensuring they are not the same as the correct cap
 3. Finally, it shuffles the list to randomize the order of the answers.
 """
 
-def ask_question():
-    pass
+def ask_question(correctState, possibleAnswers):
+
+    index = 0
+    currLetter = 65
+
+    print("The capital of " + correctState + " is:")
+    print("\t", end="")
+
+    for item in possibleAnswers:
+        print(chr(currLetter) + ". " + item + " ", end="")
+        currLetter += 1
+    
+    userInput = input().upper().stripend()
+    while userInput not in ['A','B','C','D']:
+        print("Invalid input. Input choice A-D.")
+        userInput = input("Enter selection: ")
+
+    return index
 """
 1. This function displays the quiz question to the user, showing the state and the four
 possible capitals.
@@ -79,4 +109,8 @@ def main():
 9. Finally, it prints the user's score at the end of the quiz.
 """
 
-read_file_to_dict()
+dict = read_file_to_dict()
+answer = get_random_state(dict)
+listChoices = get_random_choices(dict, answer[1])
+ask_question(answer[0], listChoices)
+#print(listChoices)
