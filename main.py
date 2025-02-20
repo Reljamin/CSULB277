@@ -81,12 +81,15 @@ def ask_question(correctState, possibleAnswers):
     for item in possibleAnswers:
         print(chr(currLetter) + ". " + item + " ", end="")
         currLetter += 1
+    print()
+    userInput = input().upper().strip()
     
-    userInput = input().upper().stripend()
     while userInput not in ['A','B','C','D']:
         print("Invalid input. Input choice A-D.")
         userInput = input("Enter selection: ")
-
+        
+    index = ord(userInput) - 65
+    
     return index
 """
 1. This function displays the quiz question to the user, showing the state and the four
@@ -96,6 +99,10 @@ possible capitals.
 (0 for A, 1 for B, etc.) and returns it.
 """
 def main():
+
+
+
+
     pass
 """
 1. This is the main function that runs the quiz.
@@ -110,7 +117,19 @@ def main():
 """
 
 dict = read_file_to_dict()
+score = 0
+for i in range(10):
+    break
+    
+
+
+
 answer = get_random_state(dict)
 listChoices = get_random_choices(dict, answer[1])
-ask_question(answer[0], listChoices)
+userAnswer = ask_question(answer[0], listChoices)
+if listChoices[userAnswer] == answer[1]:
+    score += 1
+print(listChoices[userAnswer])
+print(answer[1])
+print(score)
 #print(listChoices)
