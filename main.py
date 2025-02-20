@@ -40,7 +40,7 @@ def read_file_to_dict():
 def get_random_state(stateDict):
 
     randState = random.choice(list(stateDict.items()))
-    print(randState)
+    #print(randState)
     return randState
 """
 1. This function takes the dictionary of states and capitals as input.
@@ -82,11 +82,11 @@ def ask_question(correctState, possibleAnswers):
         print(chr(currLetter) + ". " + item + " ", end="")
         currLetter += 1
     print()
-    userInput = input().upper().strip()
+    userInput = input("Enter selection: ").upper().strip()
     
     while userInput not in ['A','B','C','D']:
         print("Invalid input. Input choice A-D.")
-        userInput = input("Enter selection: ")
+        userInput = input("Enter selection: ").upper().strip()
         
     index = ord(userInput) - 65
     
@@ -100,10 +100,27 @@ possible capitals.
 """
 def main():
 
+    print("- State Capitals Quiz –")
+
+    dict = read_file_to_dict()
+    score = 0
+    for i in range(10):
+        
+        print(str(i +1) + ". ", end="")
+        answer = get_random_state(dict)
+        listChoices = get_random_choices(dict, answer[1])
+        userAnswer = ask_question(answer[0], listChoices)
+        if listChoices[userAnswer] == answer[1]:
+            score += 1
+            print("Correct!")
+        else:
+            print("Incorrect! The correct answer is: " + answer[1])
+    
+    print("End of test. You got " + str(score) + " correct.")
+    
 
 
-
-    pass
+    
 """
 1. This is the main function that runs the quiz.
 2. It reads the state capitals from the file into a dictionary.
@@ -116,20 +133,10 @@ def main():
 9. Finally, it prints the user's score at the end of the quiz.
 """
 
-dict = read_file_to_dict()
-score = 0
-for i in range(10):
-    break
+
     
 
 
+main()
 
-answer = get_random_state(dict)
-listChoices = get_random_choices(dict, answer[1])
-userAnswer = ask_question(answer[0], listChoices)
-if listChoices[userAnswer] == answer[1]:
-    score += 1
-print(listChoices[userAnswer])
-print(answer[1])
-print(score)
-#print(listChoices)
+
