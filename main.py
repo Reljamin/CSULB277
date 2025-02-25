@@ -48,7 +48,7 @@ def main():
     
     userChoice = 0
     while (userChoice != 5):
-        userChoice = check_input.get_int_range("Enter Direction: \n1. Up\n2. Down\n3. Left\n4. Right\n5. Quit", 1, 5)
+        userChoice = check_input.get_int_range("Enter Direction: \n1. Up\n2. Down\n3. Left\n4. Right\n5. Quit\n", 1, 5)
 
         if userChoice == 1:
             rect.move_up()

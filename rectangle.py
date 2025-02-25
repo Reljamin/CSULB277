@@ -12,13 +12,13 @@ class Rectangle:
         return self.width, self.height
     
     def move_up(self):
-        self.y += 1
+        self.x -= 1
 
     def move_down(self):
-        self.y -= 1
-
-    def move_right(self):
         self.x += 1
 
+    def move_right(self):
+        self.y += 1
+
     def move_left(self):
-        self.x -= 1
+        self.y -= 1
