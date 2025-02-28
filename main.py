@@ -1,3 +1,9 @@
+'''
+Names: nick nojiri & ariel winkler
+Date: 2/27/2025
+Description: moving square on a 20x20 grid program
+'''
+
 import check_input
 import rectangle
 
@@ -55,8 +61,11 @@ def main():
             if rect.get_coords()[0] == 0:
                 print("Out of bounds")
             else:
-                print(rect.get_dimensions()[0])
+                
                 rect.move_up()
+                reset_grid(grid)
+                place_rect(grid, rect)
+                display_grid(grid)
             
         if userChoice == 2:
 
@@ -64,16 +73,22 @@ def main():
                 print("Out of bounds")
             else:
                 rect.move_down()
+                reset_grid(grid)
+                place_rect(grid, rect)
+                display_grid(grid)
 
             
         if userChoice == 3:
 
             if rect.get_coords()[1] == 0:
                 print("Out of bounds")
-                print(rect.get_coords())
+                
             else:
-                print(rect.get_coords()[1])
+                
                 rect.move_left()
+                reset_grid(grid)
+                place_rect(grid, rect)
+                display_grid(grid)
 
             
         if userChoice == 4:
@@ -82,11 +97,12 @@ def main():
                 print("Out of bounds")
             else:
                 rect.move_right()
+                reset_grid(grid)
+                place_rect(grid, rect)
+                display_grid(grid)
                     
 
-        reset_grid(grid)
-        place_rect(grid, rect)
-        display_grid(grid)
+        
 
 main()
         

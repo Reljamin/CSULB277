@@ -1,3 +1,9 @@
+'''
+Names: nick nojiri & ariel winkler
+Date: 2/27/2025
+Description: square class to be moved on a 20x20 grid
+'''
+
 class Rectangle:
     def __init__(self, w, h):
         self.x = 0
