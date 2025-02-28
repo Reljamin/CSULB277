@@ -8,12 +8,14 @@ import check_input
 import rectangle
 
 def display_grid(grid):
+    """ displays the 20x20 grid of dots and the rectangle """
     for row in grid:
         for item in row:
             print(item, end="")
         print()
 
 def reset_grid(grid):
+    """ resets the grid to only have dots """
 
     for i in range(20):
         for j in range(20):
@@ -26,7 +28,7 @@ def reset_grid(grid):
 
 
 def place_rect(grid, rect):
-
+    """ places the rectangle on the grid represented with asterisks """
     x, y = rect.get_coords()
     w, h = rect.get_dimensions()
 
@@ -38,6 +40,7 @@ def place_rect(grid, rect):
 
 def main():
 
+    
     w = check_input.get_int_range("Enter rectangle width (1-5): ", 1, 5)
     h = check_input.get_int_range("Enter rectangle height (1-5): ", 1, 5)
     
