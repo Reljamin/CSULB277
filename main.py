@@ -48,7 +48,7 @@ def main():
             list.append(".")
         grid.append(list)
     
-    rect = rectangle.Rectangle(w, h)
+    rect = rectangle.Rectangle(h, w)
     place_rect(grid, rect)
     display_grid(grid)
     
