@@ -51,13 +51,38 @@ def main():
         userChoice = check_input.get_int_range("Enter Direction: \n1. Up\n2. Down\n3. Left\n4. Right\n5. Quit\n", 1, 5)
 
         if userChoice == 1:
-            rect.move_up()
+
+            if rect.get_coords()[0] == 0:
+                print("Out of bounds")
+            else:
+                print(rect.get_dimensions()[0])
+                rect.move_up()
+            
         if userChoice == 2:
-            rect.move_down()
+
+            if rect.get_coords()[0] + rect.get_dimensions()[0] == 20:
+                print("Out of bounds")
+            else:
+                rect.move_down()
+
+            
         if userChoice == 3:
-            rect.move_left()
+
+            if rect.get_coords()[1] == 0:
+                print("Out of bounds")
+                print(rect.get_coords())
+            else:
+                print(rect.get_coords()[1])
+                rect.move_left()
+
+            
         if userChoice == 4:
-            rect.move_right()        
+
+            if rect.get_coords()[1] + rect.get_dimensions()[1] == 20:
+                print("Out of bounds")
+            else:
+                rect.move_right()
+                    
 
         reset_grid(grid)
         place_rect(grid, rect)
