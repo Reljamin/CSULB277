@@ -13,30 +13,15 @@ class Player:
 
         for die in self.dice:
             die.roll()
-        
-        if self.dice[1] < self.dice[0]:
-            temp = self.dice[1]
-            self.dice[1] = self.dice[0]
-            self.dice[0] = temp
 
-        if self.dice[2] < self.dice[1]:
-            temp = self.dice[2]
-            self.dice[2] = self.dice[1]
-            self.dice[1] = temp
-
-        if self.dice[1] < self.dice[0]:
-            temp = self.dice[1]
-            self.dice[1] = self.dice[0]
-            self.dice[0] = temp
+        self.dice.sort()
     
     def has_pair(self):
         
-        if self.dice[0] == self.dice[1]:
+        if ((self.dice[0] == self.dice[1]) or (self.dice[1] == self.dice[2])):
             self.point += 1
             return True
-        elif self.dice[1] == self.dice[2]:
-            self.point += 1
-            return True
+        
     
     def has_three_of_a_kind(self):
         if (self.dice[0] == self.dice[1] == self.dice[2]):

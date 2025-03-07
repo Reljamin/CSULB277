@@ -3,9 +3,11 @@ import check_input
 
 def take_turn(player):
 
+    
+
     player.roll_dice()
 
-    print(str(player))
+    print("\n" + str(player))
 
     if player.has_three_of_a_kind():
         print("You got 3 of a kind!")
@@ -27,6 +29,8 @@ def main():
 
     user = player.Player()
     keepPlaying = True
+
+    print("-Yahtzee-")
 
     while (keepPlaying):
         
