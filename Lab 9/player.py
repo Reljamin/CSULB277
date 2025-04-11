@@ -7,30 +7,30 @@ class Player:
 
         
 
-        r, c = prev_pos
-        new_r, new_c = r, c
+        x, y = prev_pos
+        new_x, new_y = x, y
 
         
-        if direction == 'w':  # Up
-            new_r -= 1
-        elif direction == 's':  # Down
-            new_r += 1
-        elif direction == 'a':  # Left
-            new_c -= 1
-        elif direction == 'd':  # Right
-            new_c += 1
+        if direction == 'w':  
+            new_x -= 1
+        elif direction == 's': 
+            new_x += 1
+        elif direction == 'a':  
+            new_y -= 1
+        elif direction == 'd':  
+            new_y += 1
         else:
-            return False  # Invalid direction, do nothing
+            return False  
 
-        # Check for wall
-        if maze.is_wall(new_r, new_c):
-            return False  # Player stays in the same place
+        # checks if you run into a wall
+        if maze.is_wall(new_x, new_y):
+            return False  
 
-        # Check if moving into ghost
-        ran_into_ghost = maze[new_r][new_c] == 'G'
+        # checks if you run into a ghost
+        ran_into_ghost = maze[new_x][new_y] == 'G'
 
         # Move player
-        maze.place_char(r, c, ' ')
-        maze.place_char(new_r, new_c, 'P')
+        maze.place_char(x, y, ' ')
+        maze.place_char(new_x, new_y, 'P')
 
         return ran_into_ghost

@@ -3,18 +3,18 @@ from maze import Maze
 
 class Ghost:
     def __init__(self):
-        self._previous = '.'  # The character under the ghost before it moved
+        self._previous = '.'  # will store character before ghost moved
 
     def move(self):
         maze = Maze()
-        ghost_pos = maze.search_maze('G')
-        player_pos = maze.search_maze('P')
+        ghostPos = maze.search_maze('G')
+        playerPos = maze.search_maze('P')
 
-        gx, gy = ghost_pos #get ghost's x and y coordinates
+        gx, gy = ghostPos #get ghost's x and y coordinates
 
-        px, py = player_pos #get player's x and y coordinates
+        px, py = playerPos #get player's x and y coordinates
 
-        # Determine movement direction toward player
+        #handle the direction, check if can move towards player
         directions = []
         if px < gx:
             directions.append((-1, 0))  # up

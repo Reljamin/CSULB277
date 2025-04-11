@@ -15,6 +15,7 @@ def main():
 
         
         if maze.count_dots() == 0:
+
             print("you win!")
             break #breaks us out of our while loop
 
@@ -22,8 +23,9 @@ def main():
         direction = input("Enter direction (w = up, a = left, s = down, d = right): ").lower()
 
         if direction not in ['w', 'a', 's', 'd']:
+
             print("please choose either: w, a, s, or d.")
-            continue
+            continue #skips the rest of the code and keeps the loop going which basically asks the user for input again
 
         
         ran_into_ghost = player.move(direction)
@@ -37,14 +39,14 @@ def main():
         if maze.is_wall(*maze.search_maze('P')):
             print("you hit a wall but the ghost still moved")
 
-        # Ghost moves
+        # call the ghost move to move it, if it returns true then 
         if ghost.move():
             print(maze)
             print("The ghost caught you! You lose!")
             break
 
-        # Print separator for next round
-        print("\n" + "-"*30 + "\n")
+        
+        print("\n")
 
 if __name__ == "__main__":
     main()
