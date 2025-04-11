@@ -9,16 +9,16 @@ class Maze:
             cls._instance = super().__new__(cls)
         return cls._instance
 
-    def __init__(self, filename="maze.txt"):
+    def __init__(self, filename="pacman.txt"):
         if not Maze._initialized:
-            self.grid = []
+            self._grid = []
             try:
                 with open(filename, "r") as f:
                     for line in f:
                         if line.endswith('\n'):
-                            self.grid.append(list(line[:-1]))
+                            self._grid.append(list(line[:-1]))
                         else:
-                            self.grid.append(list(line))
+                            self._grid.append(list(line))
             except FileNotFoundError:
                 raise Exception("maze file not found")
             Maze._initialized = True
@@ -36,9 +36,9 @@ class Maze:
         return "\n".join("".join(row) for row in self._grid)
 
     def search_maze(self, char):
-        for r in range(len(self.grid)):
-            for c in range(len(self.grid[r])):
-                if self.grid[r][c] == char:
+        for r in range(len(self._grid)):
+            for c in range(len(self._grid[r])):
+                if self._grid[r][c] == char:
                     return [r, c]
         return [-1, -1]
 

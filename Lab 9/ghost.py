@@ -40,10 +40,10 @@ class Ghost:
                 continue
 
             
-            maze.place_char(gx, gy, self.previous)
-            self.previous = maze[nr][nc]
+            maze.place_char(gx, gy, self._previous)
+            self._previous = maze[nr][nc]
             maze.place_char(nr, nc, 'G')
 
-            return self.previous == 'P'
+            return self._previous == 'P'
 
         return False  
