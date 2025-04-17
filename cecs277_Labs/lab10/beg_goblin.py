@@ -9,7 +9,7 @@ class BegGoblin(Entity):
         super().__init__("Goblin", hp)
     
     def melee_attack(self, enemy):
-        # Damage range: 4-6
+        # damage range: 4-6
         damage = random.randint(4, 6)
         enemy.take_damage(damage)
         return f"{self.name} bites {enemy.name} for {damage} damage."

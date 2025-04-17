@@ -8,7 +8,7 @@ class BegTroll(Entity):
         super().__init__("Troll", hp)
     
     def melee_attack(self, enemy):
-        # Damage range: 5-9
+        # damage range: 5-9
         damage = random.randint(5, 9)
         enemy.take_damage(damage)
         return f"{self.name} slams {enemy.name} for {damage} damage."

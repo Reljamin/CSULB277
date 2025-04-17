@@ -1,6 +1,6 @@
 import random
 import abc
-import check_input  # Assumes you have check_input-7.py available as check_input
+import check_input  # assumes that check_input-7.py available as check_input
 
 
 class Entity(abc.ABC):
