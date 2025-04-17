@@ -1,6 +1,4 @@
-# ===========================
-# Hero Class (hero.py)
-# ===========================
+
 import random
 from entity import Entity
 

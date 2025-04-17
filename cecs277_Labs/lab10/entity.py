@@ -2,9 +2,7 @@ import random
 import abc
 import check_input  # Assumes you have check_input-7.py available as check_input
 
-# ===========================
-# Base Entity Class (entity.py)
-# ===========================
+
 class Entity(abc.ABC):
     def __init__(self, name, hp):
         self._name = name

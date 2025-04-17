@@ -1,6 +1,4 @@
-# ===========================
-# BeginnerFactory and ExpertFactory (beg_factory.py / exp_factory.py)
-# ===========================
+
 
 import random
 from enemy_factory import EnemyFactory  # For the base factory class

@@ -1,6 +1,4 @@
-# ===========================
-# Main Game Logic (main.py)
-# ===========================
+
 import check_input
 from hero import Hero
 from beg_factory import BeginnerFactory

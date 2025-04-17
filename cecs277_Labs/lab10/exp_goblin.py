@@ -1,6 +1,4 @@
-# ===========================
-# Enemy Classes (beg_goblin.py, beg_troll.py, exp_goblin.py, exp_troll.py)
-# ===========================
+
 import random
 from entity import Entity
 
