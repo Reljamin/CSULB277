@@ -5,6 +5,7 @@ from beg_factory import BeginnerFactory
 from exp_factory import ExpertFactory
 
 def main():
+    
     print("Monster Trials")
     hero_name = input("What is your name? ")
     hero = Hero(hero_name)

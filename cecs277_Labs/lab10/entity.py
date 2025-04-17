@@ -4,6 +4,7 @@ import check_input  # assumes that check_input-7.py available as check_input
 
 
 class Entity(abc.ABC):
+    
     def __init__(self, name, hp):
         self._name = name
         self._hp = hp

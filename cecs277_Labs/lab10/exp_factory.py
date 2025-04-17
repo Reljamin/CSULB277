@@ -5,6 +5,8 @@ from exp_troll import ExpTroll          # To create an expert troll
 
 
 class ExpertFactory(EnemyFactory):
+
     def create_random_enemy(self):
         enemy_class = random.choice([ExpGoblin, ExpTroll])
+        
         return enemy_class()
