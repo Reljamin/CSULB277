@@ -1,3 +1,12 @@
+'''
+Names: nick nojiri & ariel winkler
+Date: 4/24/2025
+Description: Decorator class creation and battling project
+
+
+
+
+'''
 from bard import Bard
 from warrior import Warrior
 from wizard import Wizard
