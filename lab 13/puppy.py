@@ -12,11 +12,11 @@ class Puppy:
 
     def throw_ball(self):
 
-        self._state.play()
+        return self._state.play(self)
         
     def give_food(self):
 
-        self._state.feed()
+        return self._state.feed(self)
     
     def inc_feeds(self):
         self._feeds += 1
@@ -26,10 +26,10 @@ class Puppy:
 
 
     def get_plays(self):
-        return self._play
+        return self._plays
 
     def get_feeds(self):
-        return self._feed
+        return self._feeds
 
     def reset(self):
         self._plays = 0

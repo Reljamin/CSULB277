@@ -14,6 +14,8 @@ class StatePlay(puppy_state.PuppyState):
             return "You throw the ball again and the puppy excitedly chases it"
         else:
             puppy.change_state(state_asleep.StateAsleep())
+
+            puppy.reset()
             return "You throw the ball again and the puppy excitedly chases it. The puppy played so much it fell asleep!"
 
 

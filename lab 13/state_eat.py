@@ -10,6 +10,8 @@ class StateEat(puppy_state.PuppyState):
 
         puppy.inc_plays()
 
+        puppy.change_state(state_play.StatePlay())
+
         return "The puppy looks up from its food and chases the ball you threw."
 
 
@@ -23,5 +25,7 @@ class StateEat(puppy_state.PuppyState):
             return "The puppy continues to eat as you add another scoop of kibble to its bowl."
         else:
             puppy.change_state(state_asleep.StateAsleep())
+
+            puppy.reset()
             return "The puppy continues to eat as you add another scoop of kibble to its bowl. The puppy at so much it fell asleep!"
 
