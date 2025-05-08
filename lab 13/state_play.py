@@ -9,12 +9,12 @@ class StatePlay(puppy_state.PuppyState):
         puppy.inc_plays()
 
         if puppy.get_plays() == 1:
-            return "The puppy wakes up and comes running to eat."
+            return "The puppy looks up from its food and chases the ball you threw."
         elif puppy.get_plays() < 3:
-            return "The puppy continues to eat as you add another scoop of kibble to its bowl."
+            return "You throw the ball again and the puppy excitedly chases it"
         else:
             puppy.change_state(state_asleep.StateAsleep())
-            return "The puppy continues to eat as you add another scoop of kibble to its bowl.\nThe puppy at so much it fell asleep!"
+            return "You throw the ball again and the puppy excitedly chases it. The puppy played so much it fell asleep!"
 
 
 
@@ -22,6 +22,6 @@ class StatePlay(puppy_state.PuppyState):
     def feed(self, puppy):
 
 
-        return "noooooooooooooooooo i will ignore your food"
+        return "The puppy is too busy playing with the ball to eat right now"
 
 
