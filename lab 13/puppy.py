@@ -25,10 +25,10 @@ class Puppy:
         self._plays += 1
 
 
-    def get_play(self):
+    def get_plays(self):
         return self._play
 
-    def get_feed(self):
+    def get_feeds(self):
         return self._feed
 
     def reset(self):
